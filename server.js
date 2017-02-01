@@ -22,3 +22,5 @@ app.get('/images/:lat/:lon/:date', (req, res) => {
 		return results
 	})
 })
+
+app.listen(process.env.PORT || 8080)
