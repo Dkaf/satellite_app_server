@@ -2,8 +2,6 @@ const express = require('express');
 const unirest = require('unirest');
 const app = express();
 
-app.use()
-
 app.get('/assets/:lat/:lon', (req, res) => {
 	let lat = req.params.lat
 	let lon = req.params.lon
