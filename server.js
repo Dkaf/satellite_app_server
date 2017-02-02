@@ -8,7 +8,7 @@ app.get('/assets/:lat/:lon', (req, res) => {
 	let key = process.env.NASA_KEY
 	unirest.get('https://api.nasa.gov/planetary/earth/assets?' + "lat=" + lat + "&lon=" + lon + "&api_key=" + key)
 	.end( (results) => {
-		return results
+		return res.json(results)
 	})
 })
 
@@ -19,7 +19,7 @@ app.get('/images/:lat/:lon/:date', (req, res) => {
 	let key = process.env.NASA_KEY
 	unirest.get('https://api.nasa.gov/planetary/earth/imagery?' + "lat=" + lat + "&lon=" + lon + "&date=" + date + "&api_key=" + key)
 	.end( (results) => {
-		return results
+		return res.json(results)
 	})
 })
 
