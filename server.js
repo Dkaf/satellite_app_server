@@ -11,7 +11,7 @@ app.get('/assets/:lat/:lon', (req, res) => {
 	let key = process.env.NASA_KEY
 	unirest.get('https://api.nasa.gov/planetary/earth/assets?' + "lat=" + lat + "&lon=" + lon + "&api_key=" + key)
 	.end( (results) => {
-		return res.json(results)
+		return res.json(results.body.results)
 	})
 })
 
