@@ -3,7 +3,7 @@ const unirest = require('unirest');
 const app = express();
 const cors = require('cors')
 
-app.use(cors);
+app.use(cors());
 
 app.get('/assets/:lat/:lon', (req, res) => {
 	let lat = req.params.lat + '&'
