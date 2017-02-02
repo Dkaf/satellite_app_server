@@ -10,6 +10,7 @@
   "author": "Daniel Kafer",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.1",
     "express": "^4.14.1",
     "unirest": "^0.5.1"
   }
