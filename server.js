@@ -3,10 +3,10 @@ const unirest = require('unirest');
 const app = express();
 
 app.get('/assets/:lat/:lon', (req, res) => {
-	let lat = req.params.lat
-	let lon = req.params.lon
+	let lat = req.params.lat + '&'
+	let lon = req.params.lon + '&'
 	let key = process.env.NASA_KEY
-	unirest.get('https://api.nasa.gov/planetary/earth/assets' + lat + lon + key)
+	unirest.get('https://api.nasa.gov/planetary/earth/assets?' + "lat=" + lat + "&lon=" + lon + "&api_key=" + key)
 	.end( (results) => {
 		return results
 	})
@@ -17,7 +17,7 @@ app.get('/images/:lat/:lon/:date', (req, res) => {
 	let lon = req.params.lon;
 	let date = req.params.date;
 	let key = process.env.NASA_KEY
-	unirest.get('https://api.nasa.gov/planetary/earth/imagery' + lat + lon + date + key)
+	unirest.get('https://api.nasa.gov/planetary/earth/imagery?' + "lat=" + lat + "&lon=" + lon + "&date=" + date + "&api_key=" + key)
 	.end( (results) => {
 		return results
 	})
