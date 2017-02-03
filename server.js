@@ -5,7 +5,7 @@ const cors = require('cors')
 
 app.use(cors());
 
-app.get('/assets?lat=:lat&lon=:lon', (req, res) => {
+app.get('/assets/:lat/:lon', (req, res) => {
 	let lat = req.params.lat + '&'
 	let lon = req.params.lon + '&'
 	let key = process.env.NASA_KEY
@@ -15,7 +15,7 @@ app.get('/assets?lat=:lat&lon=:lon', (req, res) => {
 	})
 })
 
-app.get('/images?lat=:lat&lon=:lon&date=:date', (req, res) => {
+app.get('/images/:lat/:lon/:date', (req, res) => {
 	let lat = req.params.lat;
 	let lon = req.params.lon;
 	let date = req.params.date;
