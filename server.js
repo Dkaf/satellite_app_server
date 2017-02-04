@@ -22,7 +22,7 @@ app.get('/images/:lat/:lon/:date', (req, res) => {
 	let key = process.env.NASA_KEY
 	unirest.get('https://api.nasa.gov/planetary/earth/imagery?' + "lat=" + lat + "&lon=" + lon + "&date=" + date + "&api_key=" + key)
 	.end( (results) => {
-		return res.json(results)
+		return res.json(results.body)
 	})
 })
 
